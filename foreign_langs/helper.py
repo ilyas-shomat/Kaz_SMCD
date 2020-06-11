@@ -1,4 +1,6 @@
 import string
+import matplotlib.pyplot as plt
+
 
 def clean_text(text):
 
@@ -19,7 +21,26 @@ def delete_stopwords(splitted_text, stop_words):
 
     return final_words
 
+def define_sentiment(fileUrl, final_words):
 
+    emotion_list = []
+
+    with open(fileUrl, 'r') as file:
+
+        for line in file:
+            clear_line = line.replace("\n",'').replace(",",'').replace("'",'').strip()
+            word, emotion = clear_line.split(':')
+
+            if word in final_words:
+                emotion_list.append(emotion)
+
+    return emotion_list
+
+def show_via_plt(key, value):
+
+    plt.bar(key, value)
+    plt.savefig('graph.png')
+    plt.show()
 
 stop_words = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself",
               "yourselves", "he", "him", "his", "himself", "she", "her", "hers", "herself", "it", "its", "itself",
