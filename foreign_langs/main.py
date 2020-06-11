@@ -11,7 +11,6 @@ final_words = helper.delete_stopwords(final_text, stop_words)
 
 emotion_list_from_text = helper.define_sentiment('files/emotions', final_words)
 
-
 print(emotion_list_from_text)
 w = Counter(emotion_list_from_text)
 
