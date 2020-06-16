@@ -16,6 +16,6 @@ w = Counter(emotion_list_from_text)
 
 helper.show_via_plt(w.keys(), w.values())
 
-
+print(final_words)
 
 
