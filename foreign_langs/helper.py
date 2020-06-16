@@ -39,7 +39,13 @@ def define_sentiment(fileUrl, final_words):
 
 def show_via_plt(key, value):
 
-    plt.bar(key, value)
+    # plt.bar(key, value)
+    # plt.savefig('graph.png')
+    # plt.show()
+
+    fig, ax1 = plt.subplots()
+    ax1.bar(key, value)
+    fig.autofmt_xdate()
     plt.savefig('graph.png')
     plt.show()
 
